@@ -13,7 +13,7 @@ public class AppAddItems {
         Transaction t = ss.beginTransaction();
 
         Director dir = new Director("Markus Persson",1979);
-        Videojuego d1 = new Videojuego("Minecraft","Mojang",2010,dir);
+        Videojuego d1 = new Videojuego("Minecraft","Mojang",2010,dir,null);
 
         ss.persist(d1);
         t.commit();

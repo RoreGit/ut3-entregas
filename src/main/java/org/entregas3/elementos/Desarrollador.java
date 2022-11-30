@@ -2,11 +2,12 @@ package org.entregas3.elementos;
 
 import jakarta.persistence.*;
 
+import java.io.Serializable;
 import java.util.List;
 
 @Entity
 @Table(name="desarrolladores")
-public class Desarrollador {
+public class Desarrollador implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -17,10 +18,18 @@ public class Desarrollador {
     @ManyToMany(cascade = CascadeType.PERSIST, mappedBy = "desarrolladores")
     private List<Videojuego> videojuegos;
 
+    @ManyToOne(cascade = CascadeType.PERSIST,fetch = FetchType.LAZY)
+    @JoinColumn(name="FK_motorGrafico",referencedColumnName = "id")
+    private MotorGrafico motor;
+
     public Desarrollador(String nombre, int horas, List<Videojuego> videojuegos) {
         this.nombre = nombre;
         this.horas = horas;
         this.videojuegos = videojuegos;
+    }
+
+    public Desarrollador() {
+
     }
 
     public int getId() {
@@ -50,5 +59,15 @@ public class Desarrollador {
 
     public void setVideojuegos(List<Videojuego> videojuegos) {
         this.videojuegos = videojuegos;
+    }
+
+    @Override
+    public String toString() {
+        return "Desarrollador{" +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
+                ", horas=" + horas +
+                ", videojuegos=" + videojuegos +
+                '}';
     }
 }
