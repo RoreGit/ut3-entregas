@@ -1,0 +1,24 @@
+Realiza un proyecto con Hibernate con, al menos, 4 entidades y distintas relaciones entre ellas.
+
+Incluye distintas aplicaciones que creen la estructura de tablas con sus relaciones y persistan datos en ella.
+
+Realiza diversos ejemplos de consultas.
+
+La base de datos llevará tu nombre.
+
+
+1 a 1
+
+Videojuego - Director
+
+1 a N
+
+Desarrolladores - Motor Gráfico
+
+N a N
+
+Videojuego - Desarrolladores
+
+Herencia
+
+Lenguaje - Motor Gráfico
