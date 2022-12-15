@@ -22,14 +22,23 @@ public class Desarrollador implements Serializable {
     @JoinColumn(name="FK_motorGrafico",referencedColumnName = "id")
     private MotorGrafico motor;
 
-    public Desarrollador(String nombre, int horas, List<Videojuego> videojuegos) {
+    public Desarrollador(String nombre, int horas, List<Videojuego> videojuegos, MotorGrafico motor) {
         this.nombre = nombre;
         this.horas = horas;
         this.videojuegos = videojuegos;
+        this.motor = motor;
     }
 
     public Desarrollador() {
 
+    }
+
+    public MotorGrafico getMotor() {
+        return motor;
+    }
+
+    public void setMotor(MotorGrafico motor) {
+        this.motor = motor;
     }
 
     public int getId() {
@@ -68,6 +77,7 @@ public class Desarrollador implements Serializable {
                 ", nombre='" + nombre + '\'' +
                 ", horas=" + horas +
                 ", videojuegos=" + videojuegos +
+                ", motor=" + motor +
                 '}';
     }
 }

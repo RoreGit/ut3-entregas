@@ -82,5 +82,14 @@ public class Videojuego implements Serializable {
         this.year = year;
     }
 
-
+    @Override
+    public String toString() {
+        return "Videojuego{" +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
+                ", estudio='" + estudio + '\'' +
+                ", year=" + year +
+                ", director=" + director +
+                '}';
+    }
 }

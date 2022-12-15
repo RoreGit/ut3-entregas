@@ -10,7 +10,7 @@ public class HibernateUtil {
     }
     public static SessionFactory getSessionFactory(){
         if(factory==null){
-            factory = new Configuration().configure("hibernate.cfg.xml").
+            factory = new Configuration().configure().
                     buildSessionFactory(new StandardServiceRegistryBuilder().configure().build());
         }
         return factory;

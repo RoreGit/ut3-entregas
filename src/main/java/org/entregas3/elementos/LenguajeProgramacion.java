@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 import java.io.Serializable;
 @Entity
 //@Inheritance(strategy= InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "lenguaje",discriminatorType = DiscriminatorType.CHAR)
+@DiscriminatorColumn(name = "lenguajes",discriminatorType = DiscriminatorType.CHAR)
 @DiscriminatorValue(value="L")
 public class LenguajeProgramacion implements Serializable {
     @Id
